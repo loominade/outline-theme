@@ -1,0 +1,6 @@
+{{ attach_library('ampersand/togglebox') }}
+
+<label class="togglebox {% if attributes.disabled %}togglebox--disabled{% endif %}">
+  <input class="togglebox__checkbox" type="radio" {{ attributes|without('class', 'ckecked') }} hidden {% if attributes.checked %}checked{% endif %} />
+  <span class="togglebox__tick"></span>
+</label>

@@ -1,0 +1,6 @@
+{{ attach_library('ampersand/tickbox') }}
+
+<label class="tickbox {% if attributes.disabled %}tickbox--disabled{% endif %}">
+  <input class="tickbox__checkbox" type="checkbox" {{ attributes|without('class', 'ckecked') }} hidden {% if attributes.checked %}checked{% endif %} />
+  <span class="tickbox__tick"></span>
+</label>

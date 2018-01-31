@@ -1,0 +1,6 @@
+- text: 'Submit'
+  tag: 'button'
+  link: '#'
+- text: 'Link'
+  tag: 'a'
+  link: '#'

@@ -1,0 +1,14 @@
+<svg width="459" height="1001" viewBox="0 0 459 1001" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>u2705-ACCEPT</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="matrix(41.67 0 0 41.67 0 208.35)">
+<g id="bold/u2705-ACCEPT">
+<g id="Shape">
+<use xlink:href="#path0_fill" transform="translate(0 2.90212)"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 9.05674 0.218509L 3.35123 5.89367L 1.26933 3.79963C 0.977985 3.50828 0.510618 3.50828 0.219273 3.79356C -0.0720716 4.07883 -0.0720716 4.55227 0.213204 4.84361L 2.8171 7.46572C 2.96277 7.61139 3.15093 7.68423 3.34516 7.68423C 3.53332 7.68423 3.72148 7.61139 3.86716 7.46572L 10.1007 1.26857C 10.3921 0.97722 10.3921 0.509854 10.1068 0.218509C 9.81545 -0.0728364 9.34808 -0.0728364 9.05674 0.218509Z"/>
+</defs>
+</svg>

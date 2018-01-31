@@ -1,0 +1,13 @@
+- attributes:
+    id: 'tick-test'
+    name: 'tick-test'
+    checked: true
+- attributes:
+    id: 'tick-test-2'
+    name: 'tick-test-2'
+    checked: false
+- attributes:
+    id: 'tick-test-3'
+    name: 'tick-test-3'
+    checked: false
+    disabled: true

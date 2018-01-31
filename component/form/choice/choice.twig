@@ -1,0 +1,28 @@
+{{ attach_library('ampersand/choice') }}
+
+<span class="choice {% if attributes.multiple %}choice--multiple{% endif %}">
+  {% spaceless %}
+    <select class="choice__select {{ attributes.class }}" id="{{ attributes.id }}" {{ attributes|without('id', 'class') }}>
+      {% for option in options %}
+        {% if option.type == 'optgroup' %}
+          <optgroup label="{{ option.label }}">
+            {% for sub_option in option.options %}
+              <option value="{{ sub_option.value }}"{{ sub_option.selected ? ' selected="selected"' }}>
+                {% if option.label != " " %}
+                  {{ sub_option.label }}
+                {% endif %}
+              </option>
+            {% endfor %}
+          </optgroup>
+        {% else %}
+          <option value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>
+            {%- if option.label != " " -%}
+              {{- option.label -}}
+            {%- endif -%}
+          </option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  {% endspaceless %}
+  <label class="choice__suffix" for="{{ attributes.id }}"></label>
+</span>

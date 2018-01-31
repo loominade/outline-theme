@@ -1,0 +1,34 @@
+{{ attach_library('ampersand/form_byte') }}
+
+<dl class="form-byte {{ attributes.class }}" {{ attributes.without('class') }}>
+  {% if label_display in ['before', 'invisible'] %}
+    <dt class="form-byte__title">{{ label }}</dt>
+  {% endif %}
+  {% if description_display == 'before' and description.content %}
+    <dd class="form-byte__description" {{ description.attributes.widthout('class') }}>
+      {{ description.content }}
+    </dd>
+  {% endif %}
+  <dd class="form-byte__item">
+    {% if prefix is not empty %}
+      <label for="{{ attributes.id }}" class="form-byte__prefix">{{ prefix }}</label>
+    {% endif %}
+    {{ children | raw }}
+    {% if suffix is not empty %}
+      <label for="{{ attributes.id }}" class="form-byte__suffix">{{ suffix }}</label>
+    {% endif %}
+    {% if label_display == 'after' %}
+      {{ label }}
+    {% endif %}
+    {% if errors %}
+      <div class="form-bot__errors">
+        {{ errors }}
+      </div>
+    {% endif %}
+  </dd>
+  {% if description_display in ['after', 'invisible'] and description.content %}
+    <dd class="form-byte__description" {{ description.attributes.widthout('class') }}>
+      {{ description.content }}
+    </dd>
+  {% endif %}
+</dl>

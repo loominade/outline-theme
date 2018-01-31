@@ -1,0 +1,12 @@
+- attributes:
+    id: 'toggle-test'
+    name: 'toggle-test'
+    checked: true
+- attributes:
+    id: 'toggle-test-2'
+    name: 'toggle-test-2'
+    checked: false
+- attributes:
+    id: 'toggle-test-3'
+    name: 'toggle-test-3'
+    disabled: true

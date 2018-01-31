@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ options.title }}</title>
+
+  {%- set drupal_root = '' -%}
+  {%- set drupal_root = '' -%}
+
+  <meta name="description" content="">
+  <meta name="generator" content="node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="builder/styleguide.css" />
+  <link rel="stylesheet" href="../vendor/normalize.css/normalize.css" />
+  <link rel="stylesheet" href="../base/elements.css" />
+
+  {{ styles|raw }}
+  {% for section in sections %}
+    {% if section.source.filename %}
+      <link href="../component/{{ section.source.filename | replace({'sass': 'css', 'scss': 'css'}) }}" rel="stylesheet" />
+    {% endif %}
+  {% endfor %}
+</head>
+<body id="node">
+<div class="styleguide-sidebar">
+  <div class="styleguide-sidebar__content">
+    <header class="header">
+      <h1 id="styleguide-doc-title">{{ options.title }}</h1>
+    </header>
+    <nav class="nav">
+      <ul class="nav__menu">
+        <li class="nav__menu-item">
+          <a class="styleguide-nav__menu-item" href="./index.html">
+            <span class="styleguide-nav__ref">0</span>
+            <span class="nav__name">Overview</span>
+          </a>
+        </li>
+      {% for menu_item in menu %}
+        <li class="nav__menu-item">
+          <a class="styleguide-nav__menu-item" href="section-{{ menu_item.referenceURI }}.html">
+            <span class="styleguide-nav__ref">{{ menu_item.referenceNumber }}</span>
+            <span class="nav__name">
+              {{ menu_item.header|title }}
+            </span>
+          </a>
+          {% if menu_item.isActive and menu_item.children is not empty %}
+            <ul class="styleguide-nav__menu-child">
+            {% for menu_child in menu_item.children %}
+              <li class="styleguide-nav__menu-item ">
+                <a class="nav__menu-link" href="section-{{ menu_item.referenceURI }}.html#kssref-{{ menu_child.referenceURI }}">
+                  <span class="styleguide-nav__ref {% if menu_child.isGrandChild %}nav__ref-child{% endif %}">{{ menu_child.referenceNumber }}</span>
+                  <span class="nav__name">
+                    {{ menu_child.header|replace({'.': ' '})|title   }}
+                  </span>
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</div>
+<article role="main" class="main">
+{% if homepage %}
+  <div id="kssref-0" class="into">
+    {{ homepage|raw }}
+  </div>
+{% else %}
+
+  {% for section in sections %}
+    {% set sectionElement = loop.first ? 'div' : 'section' %}
+    <{{ sectionElement }} id="kssref-{{ section.referenceURI }}" class="styleguide-section section--depth-{{ section.depth }}">
+      <div class="styleguide-tabs">
+      <div class="styleguide-style">
+        {% set headerElement = (section.depth > 6) ? 'h6' : 'h' ~ section.depth %}
+        <{{ headerElement }} class="styleguide-title title--level-{{ section.depth }}">
+          <a class="styleguide-title__permalink" href="#kssref-{{ section.referenceURI }}">
+            <span class="styleguide-title__ref">
+              {{ section.referenceNumber }}
+              <span class="styleguide-title__permalink-hash">
+                {{ hasNumericReferences ? '#permalink' : section.reference }}
+              </span>
+            </span>
+            {% set header = section.header|replace({'.': ' '})%}
+            {{ header|title }}
+          </a>
+        </{{ headerElement }}>
+
+        {% if section.description %}
+          <div class="styleguide-description">
+            {{ section.description|raw }}
+          </div>
+        {% endif %}
+
+        {% for parameter in section.parameters %}
+          {% if loop.first %}
+            <div class="styleguide-parameters__title">Parameters:</div>
+            <ul class="styleguide-parameters">
+          {% endif %}
+            <li class="styleguide-parameters__item">
+              <div class="styleguide-parameters__name"><code>{{ parameter.name }}</code></div>
+              <div class="styleguide-parameters__description">
+                {{ parameter.description|raw }}
+                {% if parameter.defaultValue %}
+                  <div class="parameters__default-value">
+                    Defaults to: <code>{{ parameter.defaultValue }}</code>
+                  </div>
+                {% endif %}
+              </div>
+            </li>
+          {% if loop.last %}
+            </ul>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% set tabs_name = 'tabs-' ~ section.referenceURI %}
+      {% if section.example %}
+        {% set id = 'tab-' ~ section.referenceURI ~ '-example' %}
+        <input id="{{ id }}" type="radio" name="{{ tabs_name }}" checked>
+        <label class="styleguide-tabs__tab" for="{{ id }}">Example</label>
+        <div class="styleguide-tabs__tab-content styleguide-modifier__wrapper">
+
+          {% set style -%}
+            {%- for property, value in section.style -%}
+              {{- property -}}: {{- value -}};
+            {%- endfor -%}
+          {%- endset %}
+          <div class="styleguide-modifier__example" style="{{ style }}">
+            {{ section.example|raw }}
+          </div>
+
+          {% for modifier in section.modifiers %}
+            <div class="styleguide-modifier__description">
+              <code class="styleguide-modifier__name style">
+                {{- modifier.name -}}
+              </code>
+              –
+              <strong class="styleguide-modifier__description">
+                {{ modifier.description|raw }}
+              </strong>
+            </div>
+            <div class="styleguide-modifier__example" style="{{ style }}">
+              {{ modifier.markup|raw }}
+            </div>
+          {% endfor %}
+        </div>
+          {% if section.markup %}
+            {% set id = 'tab-' ~ section.referenceURI ~ '-code' %}
+            <input id="{{ id }}" type="radio" name="{{ tabs_name }}">
+            <label class="styleguide-tabs__tab" for="{{ id }}">Code</label>
+            <div class="styleguide-tabs__tab-content styleguide-markup style">
+              <pre class="prettyprint linenums lang-html"><code data-language="html">{{ section.markup|escape('html') }}</code></pre>
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+      {#
+      {% if section.sourceFile.name %}
+        <div class="source style">
+          Source: <code>{{ section.sourceFile.name }}</code>, line {{ section.sourceFile.line }}
+        </div>
+      {% endif %}
+      #}
+    </{{ sectionElement }}>
+  {% endfor %}
+{% endif %}
+</article>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script>
+var Drupal = {
+  t: function(input) {
+    var output = input;
+    return output;
+  }
+};
+</script>
+
+<script src="../component/authoring/advice/advice.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-once/2.2.0/jquery.once.min.js" crossorigin="anonymous"></script>
+<script src="kss-assets/prettify.js"></script>
+
+{{ scripts|raw }}
+
+</body>
+</html>

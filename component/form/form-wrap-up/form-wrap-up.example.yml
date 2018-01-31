@@ -1,0 +1,3 @@
+children: >
+  <button class="knob " data-drupal-selector="edit-actions-submit" type="submit" id="edit-actions-submit" name="op" value="Save configuration">Save configuration</button>
+  <button class="knob knob--secondary" data-drupal-selector="edit-actions-submit" type="submit" id="edit-actions-submit" name="op" value="Save configuration">Cancel</button>

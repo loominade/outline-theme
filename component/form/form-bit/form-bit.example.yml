@@ -1,0 +1,7 @@
+children: >
+  <label class="tickbox ">
+    <input class="tickbox__checkbox" type="checkbox" data-drupal-selector="edit-toggle-favicon" id="edit-toggle-favicon" name="toggle_favicon" value="1" checked="checked" hidden="">
+    <span class="tickbox__tick"></span>
+  </label>
+label: >
+  <label for="edit-toggle-favicon" class="option">Shortcut icon</label>

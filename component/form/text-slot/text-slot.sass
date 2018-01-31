@@ -1,0 +1,26 @@
+// Text slot
+//
+// Markup: text-slot.twig
+//
+// Styleguide: form.input.text-slot
+
+@import 'metrics'
+
+.text-slot
+  line-height: $grid-cell
+  display: block
+  box-sizing: border-box
+  border-radius: 2px
+  width: 100%
+  border: none
+  padding: 0 $grid-cell/2
+  font-size: 15px
+  font-family: inherit
+  & + & 
+    margin-top: 1em
+  &[type="file"]
+    padding:
+      top: 1em
+      bottom: 1em
+    background: white
+    line-height: 1em

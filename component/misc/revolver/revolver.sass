@@ -1,0 +1,29 @@
+// Revolver
+//
+// Markup: revolver.twig
+//
+// Styleguide: misc.revolver
+
+.revolver
+  display: inline-block
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+  background: url(revolver.svg)
+  vertical-align: middle
+  margin: 0 1em
+  height: 26px
+  width: 26px
+  animation: linear .5s spin infinite
+  transition: height .2s, width .2s, margin .2s
+
+.revolver--disabled
+  height: 0
+  width: 0
+  margin: 0
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)

@@ -1,0 +1,26 @@
+{{ attach_library('ampersand/form_cluster') }}
+
+<fieldset class="form-cluster {{ attributes.class }}" {{ attributes.without('class') }}>
+  <legend class="form-cluster__title {{ legend.attributes.class }}" {{ legend.attributes.without('class') }}>
+    <span{{ legend_span.attributes }}>{{ legend.title }}</span>
+  </legend>
+  <div class="form-cluster__body">
+    {% if errors %}
+      <div>
+        {{ errors }}
+      </div>
+    {% endif %}
+    {% if prefix %}
+      <span class="form-cluster__prefix">{{ prefix }}</span>
+    {% endif %}
+    {{ children | raw }}
+    {% if suffix %}
+      <span class="form-cluster__suffix">{{ suffix }}</span>
+    {% endif %}
+    {% if description.content %}
+      <div class="form-cluster {{ description.attributes.class }}" {{ description.attributes.without('class') }}>
+        {{ description.content }}
+      </div>
+    {% endif %}
+  </div>
+</fieldset>

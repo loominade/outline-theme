@@ -1,0 +1,47 @@
+// Knob
+//
+// Markup: knob.twig
+//
+// .knob--secondary - Secondary option
+//
+// Styleguide: form.input.knob
+
+@import 'breakpoints'
+@import 'metrics'
+
+.knob
+  background-color: black
+  color: white
+  line-height: $grid-cell
+  box-sizing: border-box
+  padding: 0 1.5em
+  border-radius: .13em
+  font-size: 15px
+  letter-spacing: .05em
+  
+  // for <a>
+  white-space: nowrap
+  display: inline-block
+  text-decoration: none
+  text-align: center
+
+  // for <button>
+  border: 0
+  font-family: inherit
+  cursor: pointer
+
+  &:focus,
+  &:hover
+    box-shadow: 0 0 0 1px
+    outline: none
+    background: transparent
+    color: black
+
+    // for <a>
+    text-decoration: none
+  &[disabled]
+    opacity: .5
+
+.knob--secondary
+  background: white
+  color: black

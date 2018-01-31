@@ -1,0 +1,224 @@
+body {
+  display: flex;
+  background-size: 100vw 100vw;
+  background-position: top left;
+}
+
+.main {
+  width: 50vw;
+  padding: 100px;
+  background: #ffd106;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.styleguide-title__ref {
+  display: block;
+  font-size: .5em;
+  line-height: 1em;
+  color: black;
+}
+
+.styleguide-sidebar__content {
+ max-height: calc(100vh - 2vw);
+ overflow: auto;
+ position: sticky;
+ top: 100px;
+}
+
+.styleguide-title,
+.styleguide-description {
+  margin: 1vw 0;
+}
+
+.nav__menu-link,
+.styleguide-nav__menu-item {
+  text-decoration: none;
+}
+
+.styleguide-modifier__wrapper {
+  padding: 1vw;
+}
+
+.styleguide-markup ol {
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+.styleguide-markup li {
+  display: block;
+}
+
+.styleguide-sidebar {
+  width: 50vw;
+  padding: 100px;
+  box-sizing: border-box;
+}
+
+.nav__menu-item {
+  display: block;
+}
+
+.nav__menu {
+  padding: 0;
+  margin: 0;
+}
+
+.styleguide-nav__menu-child {
+  padding: .5vw 0;
+  margin: .5vw 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.styleguide-nav__menu-item {
+  overflow: hidden;
+}
+.styleguide-nav__ref {
+  float: right;
+  display: block;
+  min-width: 2.5em;
+}
+
+.styleguide-section {
+  padding: .5vw 0;
+}
+
+.styleguide-title__permalink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.styleguide-title {
+  font-size: 1.5em;
+}
+
+.title--level-2 {
+  font-size: 1.2em;
+}
+
+.title--level-3 {
+  font-size: 1em;
+}
+
+.lang-html {
+  background: #232323;
+  padding: 1vw;
+  display: block;
+  color: white;
+  margin: 0;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.lang-html .tag {
+  color: #ababab;
+}
+.lang-html .atn {
+  color: #989898;
+}
+
+.styleguide-modifier__example {
+  position: relative;
+}
+
+.styleguide-modifier__description {
+  margin: 1vw 0 .5vw;
+  font-size: .75em;
+}
+
+.styleguide-style {
+  width: 100%;
+  order: -2;
+  border-bottom: 1px solid;
+}
+
+.styleguide-style:only-child {
+  width: 100%;
+}
+
+.styleguide-description {
+  font-size: .8em;
+}
+
+.styleguide-markup {
+  width: 40vw;
+  overflow: auto;
+}
+
+.styleguide-section {
+  display: flex;
+}
+
+.into {
+  padding: 1vw;
+}
+
+.styleguide-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.styleguide-tabs > [type="radio"] {
+  display: none;
+}
+.styleguide-tabs > :checked + .styleguide-tabs__tab + .styleguide-tabs__tab-content {
+  display: block;
+}
+
+.styleguide-tabs__tab-content {
+  width: 63vw;
+  order: -1;
+  display: none;
+}
+
+.styleguide-tabs {
+  margin: 1vw auto;
+  width: 100%;
+}
+
+.styleguide-tabs__tab {
+  padding: .25vw .5vw;
+  display: inline-block;
+  margin-right: .25vw;
+  border: 1px solid;
+  margin-top: -1px;
+  font-size: .5em;
+  cursor: pointer
+}
+
+.styleguide-tabs > :checked + .styleguide-tabs__tab {
+  background: black;
+  color: white;
+  border-color: black;
+}
+
+.styleguide-tabs__tab-content {
+  border-bottom: 1px solid;
+  padding: 1vw;
+}
+
+@media (max-width: 500px) {
+  .styleguide-sidebar {
+    display: none;
+  }
+  .styleguide-style {
+    display: none;
+  }
+  .main {
+    width: 100vw;
+  }
+  .styleguide-tabs {
+    margin: 0;
+    width: 100vw;
+  }
+  .styleguide-tabs__tab {
+    display: none;
+  }
+  .styleguide-tabs__tab-content {
+    display: none;
+  }
+  .styleguide-tabs__tab-content {
+    width: 100%;
+  }
+}

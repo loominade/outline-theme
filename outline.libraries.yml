@@ -1,0 +1,79 @@
+global:
+  css:
+    base:
+      base/elements.css: {}
+      base/icons.css: {}
+    layout:
+      layout/layout.css: {}
+  dependencies:
+    - core/normalize
+
+text_slot:
+  css:
+    component:
+      component/form/text-slot/text-slot.css: {}
+
+text_space:
+  css:
+    component:
+      component/form/text-space/text-space.css: {}
+
+form_wrap_up:
+  css:
+    component:
+      component/form/form-wrap-up/form-wrap-up.css: {}
+
+tickbox:
+  css:
+    component:
+      component/form/tickbox/tickbox.css: {}
+
+revolver:
+  css:
+    component:
+      component/misc/revolver/revolver.css: {}
+
+revolver.ajax:
+  js:
+    component/misc/revolver/revolver.ajax.min.js: {}
+  dependencies:
+    - ampersand/revolver
+
+togglebox:
+  css:
+    component:
+      component/form/togglebox/togglebox.css: {}
+
+form_byte:
+  css:
+    component:
+      component/form/form-byte/form-byte.css: {}
+
+knob:
+  css:
+    component:
+      component/form/knob/knob.css: {}
+
+choice:
+  css:
+    component:
+      component/form/choice/choice.css: {}
+  js:
+    component/form/choice/choice.js: {}
+  dependencies:
+    - core/jquery
+
+form_bit:
+  css:
+    component:
+      component/form/form-bit/form-bit.css: {}
+      
+form_titbit:
+  css:
+    component:
+      component/form/form-titbit/form-titbit.css: {}
+
+form_cluster:
+  css:
+    component:
+      component/form/form-cluster/form-cluster.css: {}

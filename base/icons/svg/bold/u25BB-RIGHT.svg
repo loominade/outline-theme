@@ -1,0 +1,14 @@
+<svg width="292" height="1001" viewBox="0 0 292 1001" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>u25BB-RIGHT</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="matrix(41.67 0 0 41.67 -333.36 1333.44)">
+<g id="bold/u25BB-RIGHT">
+<g id="Path 2">
+<use xlink:href="#path0_fill" transform="matrix(-1.83697e-16 -1 1 -1.83697e-16 8.5 -14.0727)"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 1.1775 0.202026C 0.908128 -0.0673425 0.471395 -0.0673425 0.202026 0.202026C -0.0673423 0.471395 -0.0673423 0.908128 0.202026 1.1775L 5.07702 6.05248C 5.34638 6.32185 5.78312 6.32185 6.05248 6.05248L 10.798 1.307C 11.0673 1.03763 11.0673 0.600896 10.798 0.331528C 10.5286 0.0621591 10.0919 0.0621591 9.8225 0.331528L 5.56475 4.58928L 1.1775 0.202026Z"/>
+</defs>
+</svg>

@@ -1,0 +1,25 @@
+- attributes:
+    type: text
+    placeholder: Jim Kirk
+- attributes:
+    type: email
+    placeholder: jim@enterprise.fed
+- attributes:
+    type: date
+- attributes:
+    type: password
+    placeholder: •••••
+- attributes:
+    type: search
+    placeholder: Keywords…
+- attributes:
+    type: number
+    placeholder: 47
+- attributes:
+    type: tel
+    placeholder: 555 7463
+- attributes:
+    type: url
+    placeholder: https://loom.de
+- attributes:
+    type: file

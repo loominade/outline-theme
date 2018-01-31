@@ -1,0 +1,35 @@
+<div id="stage">
+  <main id="middle">
+    <div id="left">
+      <div id="left-top">
+        {{ page.left }}
+      </div>
+      <footer id="left-bottom">
+        {{ page.left_bottom }}
+      </footer>
+    </div>
+    <div id="right">
+      <div id="right-top">
+        {{ page.right }}
+      </div>
+      <footer id="right-bottom">
+        {{- page.content -}}
+      </footer>
+    </div>
+    <aside id="sidebar">
+      {{ page.sidebar }}
+    </aside>
+  </main>
+
+
+  <header id="top">
+    <div id="top-shelf">
+      {{ page.top }}
+      <label id="drawer-opener" for="drawer-open">⁝</label>
+    </div>
+    <input id="drawer-open" type="checkbox" hidden>
+    <div id="drawer">
+      {{ page.drawer }}
+    </div>
+  </header>
+</div>

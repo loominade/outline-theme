@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="588" height="438" viewBox="0, 0, 588, 438">
+  <g id="Layer_1">
+    <path d="M6,6 L581,6 L581,431 L6,431 L6,6 z" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-dasharray="3,2"/>
+    <text transform="matrix(1, 0, 0, 1, 294, 219)">
+      <tspan x="-92.707" y="14.833" font-family="Georgia" font-size="48" fill="#000000">(outline)</tspan>
+    </text>
+  </g>
+</svg>

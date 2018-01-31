@@ -1,0 +1,7 @@
+- label: Label goes here
+  label_display: before
+  suffix: €
+  description: 
+    content: Description geos here
+  description_display: after
+  children: '<input type="text" class="text-slot" />'

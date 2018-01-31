@@ -1,0 +1,36 @@
+// Tickbox
+//
+// Markup: tickbox.twig
+//
+// Styleguide: form.input.tickbox
+
+@charset "utf-8"
+
+.tickbox
+  border: 1px solid
+  width: 2em
+  height: 2em
+  display: inline-block
+  text-align: center
+  line-height: 2em
+  cursor: pointer
+  border-radius: 2px
+  box-shadow: inset 0 -1px 0
+  font-size: 12px
+  vertical-align: bottom
+  overflow: hidden
+
+.tickbox--disabled
+  border: 1px dashed
+  box-shadow: none
+
+.tickbox__tick
+  opacity: 0
+  transition: opacity .25s
+  \:not(.tickbox--disabled) > &:hover
+    opacity: .5
+  \:checked + &
+    opacity: 1
+  &::after
+    content: '✅'
+    font-size: 3em

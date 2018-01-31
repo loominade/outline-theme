@@ -1,0 +1,32 @@
+name: Outline
+type: theme
+description: A theme outline by LOOM
+package: Other
+core: 8.x
+base theme: false
+libraries:
+  - outline/global
+ 
+screenshot: screenshot.svg
+
+libraries-override:
+  system/admin: false
+  system/base: false
+  views_ui/admin.styling: false
+  filter/admin.styling: false
+  filter/drupal.filter:
+    css:
+      theme:
+        css/filter.admin.css: false
+  filter/drupal.filter.admin:
+    css:
+      theme:
+        css/filter.admin.css: false
+  core/normalize: 
+    css:
+      base:
+        assets/vendor/normalize-css/normalize.css: node_modules/normalize.css/normalize.css
+
+regions:
+  content: Content
+

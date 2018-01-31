@@ -1,0 +1,2 @@
+input: '<input class="text-slot" type="email" placeholder="Ihre E-mail-Addresse">'
+submit: '<button class="knob" href="#">Eintragen</button>'

@@ -1,0 +1,14 @@
+/node_modules
+.DS_Store
+
+base/**/*.css
+components/**/*.css
+layout/**/*.css
+theme/**/*.css
+
+
+base/**/*.min.js
+components/**/*.min.js
+layout/**/*.min.js
+theme/**/*.min.js
+styleguide/*.html
